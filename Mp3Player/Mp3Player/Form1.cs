@@ -142,8 +142,10 @@ namespace Mp3Player
                     {
                         using (myStream)
                         {
-                            foreach (var x in oDlg.FileNames)
+                            foreach (string x in oDlg.FileNames)
                             {
+                                if (x.Length < 5) continue;
+                                else if (x.Substring(x.Length - 4) != ".mp3" && x.Substring(x.Length - 4) != ".wma" && x.Substring(x.Length - 5) != ".flac") continue;
                                 list.Add(x);
                                 lbTitles.Items.Add(x);
                             }
