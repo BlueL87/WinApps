@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace Mp3Player
 {
     public partial class Form1 : Form
     {
+        private const string _LIST_HEADER = "LIST_STEVE_PLAYER";
         private WMPLib.WindowsMediaPlayer player;
         private ArrayList list;
         private int mode; //0-autoRewind 1-loop 2-showFrame 3-shuffle
@@ -234,6 +236,18 @@ namespace Mp3Player
             play();
         }
 
+        private void btnSaveList_Click(object sender, EventArgs e)
+        {
+            saveListDlg();
+        }
+
+        private void btnLoadList_Click(object sender, EventArgs e)
+        {
+            cleanList();
+            loadListDlg();
+            play();
+        }
+
         private void findNext()
         {
             if (mode == 0 || mode == 2)
@@ -251,6 +265,73 @@ namespace Mp3Player
                 Random rnd = new Random();
                 nextSong = rnd.Next(0, list.Count);
                 if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
+            }
+        }
+
+        private void loadListDlg()
+        {
+            System.IO.Stream myStream = null;
+            OpenFileDialog oDlg = new OpenFileDialog();
+            oDlg.Filter = "ListFile (*.lst)|*.lst";
+            oDlg.Multiselect = false;
+            currentSong = -3;
+            if (oDlg.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    if ((myStream = oDlg.OpenFile()) != null)
+                    {
+                        using (myStream)
+                        {
+                            StreamReader sr = new StreamReader(oDlg.FileName);
+                            string currentLine = sr.ReadLine();
+                            if (currentLine != _LIST_HEADER)
+                            {
+                                sr.Close();
+                                return;
+                            }
+                            while (!sr.EndOfStream)
+                            {
+                                currentLine = sr.ReadLine();
+                                list.Add(currentLine);
+                                lbTitles.Items.Add(currentLine);
+                            }
+                            sr.Close();
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: Could not play the file. Original error: " + ex.Message);
+                }
+            }
+        }
+
+        private void sAVEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveListDlg();
+        }
+
+        private void lOADLISTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            cleanList();
+            loadListDlg();
+            play();
+        }
+
+        private void saveListDlg()
+        {
+            SaveFileDialog save = new SaveFileDialog();
+            save.FileName = "yourList.lst";
+            save.Filter = "ListFile| *.lst";
+            if (save.ShowDialog() == DialogResult.OK)
+            {
+                StreamWriter writer = new StreamWriter(save.OpenFile());
+                writer.WriteLine(_LIST_HEADER);
+                for (int i = 0; i < list.Count; ++i)
+                    writer.WriteLine(list[i]);
+                writer.Dispose();
+                writer.Close();
             }
         }
     }
