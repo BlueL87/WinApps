@@ -267,13 +267,6 @@
             this.btnMode.Text = "MODE";
             this.btnMode.UseVisualStyleBackColor = false;
             this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
-            // 
-            // timerCheckFinished
-            // 
-            this.timerCheckFinished.Tick += new System.EventHandler(this.timerCheckFinished_Tick);
-            // 
-            // label2
-            // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;

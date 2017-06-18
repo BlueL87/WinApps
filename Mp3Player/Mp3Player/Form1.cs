@@ -16,7 +16,8 @@ namespace Mp3Player
         private WMPLib.WindowsMediaPlayer player;
         private ArrayList list;
         private int mode; //0-autoRewind 1-loop 2-showFrame 3-shuffle
-        private string currentSong;
+        private int currentIndex;
+        private bool isPlaying, isChanged;
 
         public Form1()
         {
@@ -30,6 +31,8 @@ namespace Mp3Player
             list = new ArrayList();
             setVolume(70);
             setMode(0);
+            isPlaying = false;
+            isChanged = false;
         }
 
         private void setMode(int i)
@@ -38,24 +41,19 @@ namespace Mp3Player
             switch (i)
             {
                 case 0:
-                    player.settings.setMode("autoRewind", true);
-                    lbMode.Text = "Auto Rewind";
+                    lbMode.Text = "Standard Play";
                     break;
                 case 1:
-                    player.settings.setMode("loop", true);
-                    lbMode.Text = "Loop";
+                    lbMode.Text = "Loop Single";
                     break;
                 case 2:
-                    player.settings.setMode("showFrame", true);
-                    lbMode.Text = "Show Frame";
+                    lbMode.Text = "Loop All";
                     break;
                 case 3:
-                    player.settings.setMode("shuffle", true);
                     lbMode.Text = "Shuffle";
                     break;
                 default:
-                    player.settings.setMode("autoRewind", true);
-                    lbMode.Text = "autoRewind";
+                    lbMode.Text = "Standard Play";
                     break;
             }
         }
@@ -83,6 +81,7 @@ namespace Mp3Player
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            isPlaying = false;
             player.controls.stop();
         }
 
@@ -93,7 +92,7 @@ namespace Mp3Player
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (currentSong == "")
+            if (list.Count == 0)
             {
                 cleanList();
                 InitMusicSelectionDlg();
@@ -152,24 +151,32 @@ namespace Mp3Player
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            currentSong = (string)lbTitles.SelectedItem;
-            if (currentSong != "")
+            player.URL = (string)lbTitles.SelectedItem;
+            if (currentIndex != lbTitles.SelectedIndex)
             {
-                player.URL = currentSong;
-                play();
+                isChanged = true;
+                currentIndex = lbTitles.SelectedIndex;
             }
+            play();
         }
 
         private void play()
         {
-            if (currentSong != "")
+            if (isPlaying && currentIndex != -1 && !isChanged)
                 player.controls.play();
-            else if (list.Count > 0)
+            else if(isChanged)
             {
-                currentSong = (string)list[0];
-                player.URL = currentSong;
+                player.controls.stop();
+                player.URL = (string)list[currentIndex];
                 player.controls.play();
             }
+            else if (list.Count > 0)
+            {
+                currentIndex = 0;
+                player.URL = (string)list[currentIndex];
+                player.controls.play();
+            }
+            isChanged = false;
         }
 
         private void cleanList()
@@ -180,20 +187,15 @@ namespace Mp3Player
 
         private void btnClean_Click(object sender, EventArgs e)
         {
+            isPlaying = false;
+            currentIndex = -1;
             player.controls.stop();
-            currentSong = "";
-            player.URL = currentSong;
             cleanList();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             InitMusicSelectionDlg();
-        }
-
-        private void timerCheckFinished_Tick(object sender, EventArgs e)
-        {
-
         }
 
         private void btnMode_Click(object sender, EventArgs e)
@@ -203,14 +205,29 @@ namespace Mp3Player
             setMode(mode);
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnNext_Click(object sender, EventArgs e)
         {
+            ++currentIndex;
+            player.controls.stop();
+            findNext();
+            isChanged = true;
+            play();
+        }
 
+        private void findNext()
+        {
+            if (mode != 3)
+            {
+                ++currentIndex;
+                if (currentIndex >= list.Count) currentIndex = 0;
+                lbTitles.SelectedIndex = currentIndex;
+            }
+            else
+            {
+                Random rnd = new Random();
+                currentIndex = rnd.Next(0, list.Count);
+                lbTitles.SelectedIndex = currentIndex;
+            }
         }
     }
 }
