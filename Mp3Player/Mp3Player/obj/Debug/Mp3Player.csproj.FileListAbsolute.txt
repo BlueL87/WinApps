@@ -1,1 +1,13 @@
 D:\Code\Mp3Player\Mp3Player\bin\Debug\Mp3Player.exe.config
+D:\Code\WinApps\Mp3Player\Mp3Player\bin\Debug\Mp3Player.exe.config
+D:\Code\WinApps\Mp3Player\Mp3Player\bin\Debug\Mp3Player.exe
+D:\Code\WinApps\Mp3Player\Mp3Player\bin\Debug\Mp3Player.pdb
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.Form1.resources
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.Properties.Resources.resources
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.csproj.GenerateResource.Cache
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.exe
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.pdb
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Interop.MediaPlayer.dll
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Interop.WMPLib.dll
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.csproj.ResolveComReference.cache
+D:\Code\WinApps\Mp3Player\Mp3Player\obj\Debug\Mp3Player.csprojResolveAssemblyReference.cache
