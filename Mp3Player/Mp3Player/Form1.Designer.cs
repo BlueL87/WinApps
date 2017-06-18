@@ -36,6 +36,7 @@
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vERSIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aUTHORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cHANGEBACKGROUNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
@@ -50,7 +51,6 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSaveList = new System.Windows.Forms.Button();
             this.btnLoadList = new System.Windows.Forms.Button();
-            this.cHANGEBACKGROUNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,7 +83,7 @@
             // 
             this.openFileToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.openFileToolStripMenuItem.Text = "OPEN";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
@@ -91,7 +91,7 @@
             // 
             this.sAVEToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sAVEToolStripMenuItem.Name = "sAVEToolStripMenuItem";
-            this.sAVEToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.sAVEToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.sAVEToolStripMenuItem.Text = "SAVE LIST";
             this.sAVEToolStripMenuItem.Click += new System.EventHandler(this.sAVEToolStripMenuItem_Click);
             // 
@@ -99,7 +99,7 @@
             // 
             this.lOADLISTToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lOADLISTToolStripMenuItem.Name = "lOADLISTToolStripMenuItem";
-            this.lOADLISTToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.lOADLISTToolStripMenuItem.Size = new System.Drawing.Size(160, 26);
             this.lOADLISTToolStripMenuItem.Text = "LOAD LIST";
             this.lOADLISTToolStripMenuItem.Click += new System.EventHandler(this.lOADLISTToolStripMenuItem_Click);
             // 
@@ -117,7 +117,7 @@
             // 
             this.vERSIONToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vERSIONToolStripMenuItem.Name = "vERSIONToolStripMenuItem";
-            this.vERSIONToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vERSIONToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.vERSIONToolStripMenuItem.Text = "VERSION";
             this.vERSIONToolStripMenuItem.Click += new System.EventHandler(this.vERSIONToolStripMenuItem_Click);
             // 
@@ -125,9 +125,17 @@
             // 
             this.aUTHORToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aUTHORToolStripMenuItem.Name = "aUTHORToolStripMenuItem";
-            this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aUTHORToolStripMenuItem.Text = "AUTHOR";
             this.aUTHORToolStripMenuItem.Click += new System.EventHandler(this.aUTHORToolStripMenuItem_Click);
+            // 
+            // cHANGEBACKGROUNDToolStripMenuItem
+            // 
+            this.cHANGEBACKGROUNDToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cHANGEBACKGROUNDToolStripMenuItem.Name = "cHANGEBACKGROUNDToolStripMenuItem";
+            this.cHANGEBACKGROUNDToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.cHANGEBACKGROUNDToolStripMenuItem.Text = "CHANGE BACKGROUND";
+            this.cHANGEBACKGROUNDToolStripMenuItem.Click += new System.EventHandler(this.cHANGEBACKGROUNDToolStripMenuItem_Click);
             // 
             // btnStop
             // 
@@ -136,7 +144,7 @@
             this.btnStop.FlatAppearance.BorderSize = 0;
             this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnStop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.ForeColor = System.Drawing.Color.Crimson;
+            this.btnStop.ForeColor = System.Drawing.Color.Maroon;
             this.btnStop.Location = new System.Drawing.Point(817, 57);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(72, 33);
@@ -152,7 +160,7 @@
             this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPlay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.ForeColor = System.Drawing.Color.Crimson;
+            this.btnPlay.ForeColor = System.Drawing.Color.Maroon;
             this.btnPlay.Location = new System.Drawing.Point(659, 57);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(73, 33);
@@ -168,7 +176,7 @@
             this.btnPause.FlatAppearance.BorderSize = 0;
             this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPause.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.ForeColor = System.Drawing.Color.Crimson;
+            this.btnPause.ForeColor = System.Drawing.Color.Maroon;
             this.btnPause.Location = new System.Drawing.Point(738, 57);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(73, 33);
@@ -184,7 +192,7 @@
             this.btnUp.FlatAppearance.BorderSize = 0;
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.ForeColor = System.Drawing.Color.Crimson;
+            this.btnUp.ForeColor = System.Drawing.Color.Maroon;
             this.btnUp.Location = new System.Drawing.Point(660, 135);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(72, 33);
@@ -200,7 +208,7 @@
             this.btnDown.FlatAppearance.BorderSize = 0;
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDown.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.ForeColor = System.Drawing.Color.Crimson;
+            this.btnDown.ForeColor = System.Drawing.Color.Maroon;
             this.btnDown.Location = new System.Drawing.Point(660, 174);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(72, 33);
@@ -213,7 +221,7 @@
             // 
             this.lbVolume.BackColor = System.Drawing.Color.Transparent;
             this.lbVolume.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVolume.ForeColor = System.Drawing.Color.Crimson;
+            this.lbVolume.ForeColor = System.Drawing.Color.Maroon;
             this.lbVolume.Location = new System.Drawing.Point(738, 174);
             this.lbVolume.Name = "lbVolume";
             this.lbVolume.Size = new System.Drawing.Size(56, 33);
@@ -225,7 +233,7 @@
             // 
             this.lbTitles.BackColor = System.Drawing.Color.White;
             this.lbTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitles.ForeColor = System.Drawing.Color.Crimson;
+            this.lbTitles.ForeColor = System.Drawing.Color.Maroon;
             this.lbTitles.FormattingEnabled = true;
             this.lbTitles.ItemHeight = 18;
             this.lbTitles.Location = new System.Drawing.Point(12, 254);
@@ -241,7 +249,7 @@
             this.btnClean.FlatAppearance.BorderSize = 0;
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClean.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.ForeColor = System.Drawing.Color.Crimson;
+            this.btnClean.ForeColor = System.Drawing.Color.Maroon;
             this.btnClean.Location = new System.Drawing.Point(91, 96);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(73, 33);
@@ -257,7 +265,7 @@
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Crimson;
+            this.btnAdd.ForeColor = System.Drawing.Color.Maroon;
             this.btnAdd.Location = new System.Drawing.Point(12, 96);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 33);
@@ -273,7 +281,7 @@
             this.btnMode.FlatAppearance.BorderSize = 0;
             this.btnMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMode.ForeColor = System.Drawing.Color.Crimson;
+            this.btnMode.ForeColor = System.Drawing.Color.Maroon;
             this.btnMode.Location = new System.Drawing.Point(660, 96);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(72, 33);
@@ -286,7 +294,7 @@
             // 
             this.lbMode.BackColor = System.Drawing.Color.Transparent;
             this.lbMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMode.ForeColor = System.Drawing.Color.Crimson;
+            this.lbMode.ForeColor = System.Drawing.Color.Maroon;
             this.lbMode.Location = new System.Drawing.Point(738, 96);
             this.lbMode.Name = "lbMode";
             this.lbMode.Size = new System.Drawing.Size(230, 33);
@@ -301,7 +309,7 @@
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNext.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Crimson;
+            this.btnNext.ForeColor = System.Drawing.Color.Maroon;
             this.btnNext.Location = new System.Drawing.Point(895, 57);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(73, 33);
@@ -317,7 +325,7 @@
             this.btnSaveList.FlatAppearance.BorderSize = 0;
             this.btnSaveList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSaveList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveList.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSaveList.ForeColor = System.Drawing.Color.Maroon;
             this.btnSaveList.Location = new System.Drawing.Point(12, 57);
             this.btnSaveList.Name = "btnSaveList";
             this.btnSaveList.Size = new System.Drawing.Size(73, 33);
@@ -333,7 +341,7 @@
             this.btnLoadList.FlatAppearance.BorderSize = 0;
             this.btnLoadList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoadList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadList.ForeColor = System.Drawing.Color.Crimson;
+            this.btnLoadList.ForeColor = System.Drawing.Color.Maroon;
             this.btnLoadList.Location = new System.Drawing.Point(91, 57);
             this.btnLoadList.Name = "btnLoadList";
             this.btnLoadList.Size = new System.Drawing.Size(73, 33);
@@ -341,14 +349,6 @@
             this.btnLoadList.Text = "LOAD";
             this.btnLoadList.UseVisualStyleBackColor = false;
             this.btnLoadList.Click += new System.EventHandler(this.btnLoadList_Click);
-            // 
-            // cHANGEBACKGROUNDToolStripMenuItem
-            // 
-            this.cHANGEBACKGROUNDToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cHANGEBACKGROUNDToolStripMenuItem.Name = "cHANGEBACKGROUNDToolStripMenuItem";
-            this.cHANGEBACKGROUNDToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.cHANGEBACKGROUNDToolStripMenuItem.Text = "CHANGE BACKGROUND";
-            this.cHANGEBACKGROUNDToolStripMenuItem.Click += new System.EventHandler(this.cHANGEBACKGROUNDToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -372,7 +372,7 @@
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.menuStrip1);
-            this.ForeColor = System.Drawing.Color.Gold;
+            this.ForeColor = System.Drawing.Color.Maroon;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1003, 552);
             this.MinimumSize = new System.Drawing.Size(1003, 552);

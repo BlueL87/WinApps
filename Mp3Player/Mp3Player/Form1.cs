@@ -321,7 +321,7 @@ namespace Mp3Player
 
         private void cHANGEBACKGROUNDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "虽然我打算设计这个功能，可是我有些懒...";
+            string message = "换背景还得匹配一个比较好的按钮颜色，我有些懒，还是算了吧...";
             string caption = "更换背景";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, caption, buttons);
