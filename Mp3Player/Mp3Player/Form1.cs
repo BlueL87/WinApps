@@ -17,7 +17,7 @@ namespace Mp3Player
         private const string _LIST_HEADER = "LIST_STEVE_PLAYER";
         private WMPLib.WindowsMediaPlayer player;
         private ArrayList list;
-        private int mode; //0-autoRewind 1-loop 2-showFrame 3-shuffle
+        private int mode;
         private int nextSong, currentSong;
         private Timer timer;
 
@@ -68,10 +68,10 @@ namespace Mp3Player
             switch (i)
             {
                 case 0:
-                    lbMode.Text = "Standard Play";
+                    lbMode.Text = "Standard";
                     break;
                 case 1:
-                    lbMode.Text = "Loop Single";
+                    lbMode.Text = "Single";
                     break;
                 case 2:
                     lbMode.Text = "Loop All";
@@ -80,7 +80,7 @@ namespace Mp3Player
                     lbMode.Text = "Shuffle";
                     break;
                 default:
-                    lbMode.Text = "Standard Play";
+                    lbMode.Text = "Standard";
                     break;
             }
         }
@@ -317,6 +317,14 @@ namespace Mp3Player
             cleanList();
             loadListDlg();
             play();
+        }
+
+        private void cHANGEBACKGROUNDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "虽然我打算设计这个功能，可是我有些懒...";
+            string caption = "更换背景";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
         }
 
         private void saveListDlg()
