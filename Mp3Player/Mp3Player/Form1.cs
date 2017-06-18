@@ -16,8 +16,8 @@ namespace Mp3Player
         private WMPLib.WindowsMediaPlayer player;
         private ArrayList list;
         private int mode; //0-autoRewind 1-loop 2-showFrame 3-shuffle
-        private int currentIndex;
-        private bool isPlaying, isChanged;
+        private int nextSong, currentSong;
+        private Timer timer;
 
         public Form1()
         {
@@ -29,10 +29,35 @@ namespace Mp3Player
         {
             player = new WMPLib.WindowsMediaPlayer();
             list = new ArrayList();
+            timer = new Timer();
+            player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(playStateChange);
             setVolume(70);
             setMode(0);
-            isPlaying = false;
-            isChanged = false;
+            resetCurrentAndNext();
+            timer.Interval = 10;
+            timer.Stop();
+            timer.Tick += new EventHandler(playNext);
+        }
+
+        private void playStateChange(int NewState)
+        {
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
+            {
+                timer.Start();
+            }
+        }
+
+        private void playNext(object sender, EventArgs e)
+        {
+            timer.Stop();
+            findNext();
+            play();
+        }
+
+        private void resetCurrentAndNext()
+        {
+            currentSong = -1;
+            nextSong = -2;
         }
 
         private void setMode(int i)
@@ -60,7 +85,7 @@ namespace Mp3Player
 
         private void aUTHORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "It is a free mp3 player made by Steve";
+            string message = "It is a free mp3 player made by Steve Liu\nContact: s7nger@gmail.com";
             string caption = "Author";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, caption, buttons);
@@ -81,7 +106,6 @@ namespace Mp3Player
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-            isPlaying = false;
             player.controls.stop();
         }
 
@@ -98,7 +122,6 @@ namespace Mp3Player
                 InitMusicSelectionDlg();
             }
             play();
-
         }
 
         private void InitMusicSelectionDlg()
@@ -107,6 +130,7 @@ namespace Mp3Player
             OpenFileDialog oDlg = new OpenFileDialog();
             oDlg.Filter = "mp3 files (*.mp3)|*.mp3|All files (*.*)|*.*";
             oDlg.Multiselect = true;
+            currentSong = -3;
 
             if (oDlg.ShowDialog() == DialogResult.OK)
             {
@@ -151,32 +175,29 @@ namespace Mp3Player
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            player.URL = (string)lbTitles.SelectedItem;
-            if (currentIndex != lbTitles.SelectedIndex)
-            {
-                isChanged = true;
-                currentIndex = lbTitles.SelectedIndex;
-            }
-            play();
+            nextSong = lbTitles.SelectedIndex;
+            if (currentSong != nextSong)
+                play();
         }
 
         private void play()
         {
-            if (isPlaying && currentIndex != -1 && !isChanged)
+            if (currentSong == nextSong)
                 player.controls.play();
-            else if(isChanged)
+            else if (list.Count > 0 && nextSong > 0 && nextSong < list.Count)
             {
                 player.controls.stop();
-                player.URL = (string)list[currentIndex];
+                player.URL = (string)list[nextSong];
+                currentSong = nextSong;
                 player.controls.play();
             }
             else if (list.Count > 0)
             {
-                currentIndex = 0;
-                player.URL = (string)list[currentIndex];
+                currentSong = 0;
+                nextSong = 0;
+                player.URL = (string)list[nextSong];
                 player.controls.play();
             }
-            isChanged = false;
         }
 
         private void cleanList()
@@ -187,10 +208,11 @@ namespace Mp3Player
 
         private void btnClean_Click(object sender, EventArgs e)
         {
-            isPlaying = false;
-            currentIndex = -1;
+            currentSong = 0;
+            nextSong = 0;
             player.controls.stop();
             cleanList();
+            player.URL = "empty_mp3.mp3";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -207,26 +229,28 @@ namespace Mp3Player
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            ++currentIndex;
             player.controls.stop();
             findNext();
-            isChanged = true;
             play();
         }
 
         private void findNext()
         {
-            if (mode != 3)
+            if (mode == 0 || mode == 2)
             {
-                ++currentIndex;
-                if (currentIndex >= list.Count) currentIndex = 0;
-                lbTitles.SelectedIndex = currentIndex;
+                nextSong = currentSong + 1;
+                if (nextSong >= list.Count) nextSong = 0;
+                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
+            }
+            else if (mode == 1)
+            {
+                nextSong = currentSong;
             }
             else
             {
                 Random rnd = new Random();
-                currentIndex = rnd.Next(0, list.Count);
-                lbTitles.SelectedIndex = currentIndex;
+                nextSong = rnd.Next(0, list.Count);
+                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
             }
         }
     }

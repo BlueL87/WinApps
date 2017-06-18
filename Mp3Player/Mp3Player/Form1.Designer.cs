@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fILEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,7 +45,6 @@
             this.btnClean = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMode = new System.Windows.Forms.Button();
-            this.timerCheckFinished = new System.Windows.Forms.Timer(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.lbMode = new System.Windows.Forms.Label();
             this.btnNext = new System.Windows.Forms.Button();
@@ -267,6 +265,9 @@
             this.btnMode.Text = "MODE";
             this.btnMode.UseVisualStyleBackColor = false;
             this.btnMode.Click += new System.EventHandler(this.btnMode_Click);
+            // 
+            // label2
+            // 
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Crimson;
@@ -330,6 +331,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(978, 552);
             this.MinimumSize = new System.Drawing.Size(978, 552);
+            this.Name = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -356,7 +358,6 @@
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnMode;
-        private System.Windows.Forms.Timer timerCheckFinished;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbMode;
         private System.Windows.Forms.Button btnNext;
