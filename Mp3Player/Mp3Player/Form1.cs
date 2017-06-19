@@ -20,6 +20,7 @@ namespace Mp3Player
         private int playMode;
         private int nextSong, currentSong;
         private Timer songFinishedTimer, playingTimer;
+        private bool standardModePlayFinished;
 
         public Form1()
         {
@@ -40,6 +41,7 @@ namespace Mp3Player
             songFinishedTimer.Interval = 10;
             songFinishedTimer.Stop();
             songFinishedTimer.Tick += new EventHandler(playNext);
+            standardModePlayFinished = false;
         }
 
         private void playStateChange(int NewState)
@@ -172,7 +174,7 @@ namespace Mp3Player
                                     && x.Substring(x.Length - 4) != ".avi"
                                     ) continue;
                                 playlist.Add(x);
-                                textTitles.Items.Add(x);
+                                lbTitles.Items.Add(x);
                             }
                         }
                     }
@@ -204,13 +206,18 @@ namespace Mp3Player
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nextSong = textTitles.SelectedIndex;
+            nextSong = lbTitles.SelectedIndex;
             if (currentSong != nextSong)
                 play();
         }
 
         private void play()
         {
+            if (standardModePlayFinished)
+            {
+                standardModePlayFinished = false;
+                return;
+            }
             if (currentSong == nextSong)
                 player.controls.play();
             else if (playlist.Count > 0 && nextSong > 0 && nextSong < playlist.Count)
@@ -234,19 +241,27 @@ namespace Mp3Player
 
         private void playingStatus(object sender, EventArgs e)
         {
-            double currentPos = player.controls.currentPosition;
-            double length = player.currentMedia.duration;
-            if (length <= 0) return;
-            double currentPercentage = currentPos / length * 100;
-            tbPosition.Value = (int)currentPercentage;
-            TimeSpan timeFormatCurrent = TimeSpan.FromSeconds(currentPos);
-            TimeSpan timeFormatLength = TimeSpan.FromSeconds(length);
-            lbTime.Text = timeFormatCurrent.ToString(@"hh\:mm\:ss") + " / " + timeFormatLength.ToString(@"hh\:mm\:ss");
+            try
+            {
+                double currentPos = player.controls.currentPosition;
+                double length = player.currentMedia.duration;
+                if (length <= 0) return;
+                double currentPercentage = currentPos / length * 100;
+                tbPosition.Value = (int)currentPercentage;
+                TimeSpan timeFormatCurrent = TimeSpan.FromSeconds(currentPos);
+                TimeSpan timeFormatLength = TimeSpan.FromSeconds(length);
+                lbTime.Text = timeFormatCurrent.ToString(@"hh\:mm\:ss") + " / " + timeFormatLength.ToString(@"hh\:mm\:ss");
+            }
+            catch (Exception ex)
+            {
+                //player is null ptr
+                songFinishedTimer.Stop();
+            }
         }
 
         private void cleanList()
         {
-            textTitles.Items.Clear();
+            lbTitles.Items.Clear();
             playlist.Clear();
         }
 
@@ -292,21 +307,26 @@ namespace Mp3Player
 
         private void findNext()
         {
-            if (playMode == 0 || playMode == 2)
+            if (playMode == 0)
             {
                 nextSong = currentSong + 1;
-                if (nextSong >= playlist.Count) nextSong = 0;
-                if (nextSong < textTitles.Items.Count) textTitles.SelectedIndex = nextSong;
+                if (nextSong >= playlist.Count) standardModePlayFinished = true;
             }
             else if (playMode == 1)
             {
                 nextSong = currentSong;
             }
+            else if (playMode == 2)
+            {
+                nextSong = currentSong + 1;
+                if (nextSong >= playlist.Count) nextSong = 0;
+                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
+            }
             else
             {
                 Random rnd = new Random();
                 nextSong = rnd.Next(0, playlist.Count);
-                if (nextSong < textTitles.Items.Count) textTitles.SelectedIndex = nextSong;
+                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
             }
         }
 
@@ -336,7 +356,7 @@ namespace Mp3Player
                             {
                                 currentLine = sr.ReadLine();
                                 playlist.Add(currentLine);
-                                textTitles.Items.Add(currentLine);
+                                lbTitles.Items.Add(currentLine);
                             }
                             sr.Close();
                         }
@@ -398,9 +418,10 @@ namespace Mp3Player
             lbMode.Hide();
             lbState.Hide();
             lbVolume.Hide();
-            textTitles.Hide();
+            lbTitles.Hide();
             tbPosition.Hide();
             lbTime.Hide();
+            btnDelete.Hide();
         }
 
         private void tbPosition_Scroll(object sender, EventArgs e)
@@ -414,6 +435,19 @@ namespace Mp3Player
             catch (Exception ex)
             {
                 //do nothing
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            player.controls.stop();
+            playlist.RemoveAt(lbTitles.SelectedIndex);
+            lbTitles.Items.RemoveAt(lbTitles.SelectedIndex);
+            if (playlist.Count > 1)
+            {
+                findNext();
+                lbTitles.SelectedIndex = nextSong;
+                play();
             }
         }
 
@@ -438,9 +472,10 @@ namespace Mp3Player
             lbMode.Show();
             lbState.Show();
             lbVolume.Show();
-            textTitles.Show();
+            lbTitles.Show();
             tbPosition.Show();
             lbTime.Show();
+            btnDelete.Show();
         }
 
     }

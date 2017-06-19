@@ -44,7 +44,7 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.lbVolume = new System.Windows.Forms.Label();
-            this.textTitles = new System.Windows.Forms.ListBox();
+            this.lbTitles = new System.Windows.Forms.ListBox();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMode = new System.Windows.Forms.Button();
@@ -55,6 +55,7 @@
             this.lbState = new System.Windows.Forms.Label();
             this.tbPosition = new System.Windows.Forms.TrackBar();
             this.lbTime = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).BeginInit();
             this.SuspendLayout();
@@ -249,16 +250,16 @@
             // 
             // textTitles
             // 
-            this.textTitles.BackColor = System.Drawing.Color.White;
-            this.textTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTitles.ForeColor = System.Drawing.Color.Teal;
-            this.textTitles.FormattingEnabled = true;
-            this.textTitles.ItemHeight = 18;
-            this.textTitles.Location = new System.Drawing.Point(12, 254);
-            this.textTitles.Name = "textTitles";
-            this.textTitles.Size = new System.Drawing.Size(500, 202);
-            this.textTitles.TabIndex = 12;
-            this.textTitles.SelectedIndexChanged += new System.EventHandler(this.lbTitles_SelectedIndexChanged);
+            this.lbTitles.BackColor = System.Drawing.Color.White;
+            this.lbTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitles.ForeColor = System.Drawing.Color.Teal;
+            this.lbTitles.FormattingEnabled = true;
+            this.lbTitles.ItemHeight = 18;
+            this.lbTitles.Location = new System.Drawing.Point(12, 254);
+            this.lbTitles.Name = "textTitles";
+            this.lbTitles.Size = new System.Drawing.Size(500, 202);
+            this.lbTitles.TabIndex = 12;
+            this.lbTitles.SelectedIndexChanged += new System.EventHandler(this.lbTitles_SelectedIndexChanged);
             // 
             // btnClean
             // 
@@ -268,7 +269,7 @@
             this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClean.ForeColor = System.Drawing.Color.Teal;
-            this.btnClean.Location = new System.Drawing.Point(82, 73);
+            this.btnClean.Location = new System.Drawing.Point(439, 463);
             this.btnClean.Margin = new System.Windows.Forms.Padding(0);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(73, 33);
@@ -285,7 +286,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Teal;
-            this.btnAdd.Location = new System.Drawing.Point(9, 73);
+            this.btnAdd.Location = new System.Drawing.Point(9, 106);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 33);
@@ -365,7 +366,7 @@
             this.btnLoadList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadList.ForeColor = System.Drawing.Color.Teal;
-            this.btnLoadList.Location = new System.Drawing.Point(82, 40);
+            this.btnLoadList.Location = new System.Drawing.Point(12, 73);
             this.btnLoadList.Margin = new System.Windows.Forms.Padding(0);
             this.btnLoadList.Name = "btnLoadList";
             this.btnLoadList.Size = new System.Drawing.Size(73, 33);
@@ -410,6 +411,23 @@
             this.lbTime.Text = "00:00:00 / 00:00:00";
             this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.ForeColor = System.Drawing.Color.Teal;
+            this.btnDelete.Location = new System.Drawing.Point(339, 463);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(100, 33);
+            this.btnDelete.TabIndex = 24;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -417,6 +435,7 @@
             this.BackgroundImage = global::Mp3Player.Properties.Resources._529320;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(985, 505);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.lbTime);
             this.Controls.Add(this.tbPosition);
             this.Controls.Add(this.lbState);
@@ -427,7 +446,7 @@
             this.Controls.Add(this.btnMode);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClean);
-            this.Controls.Add(this.textTitles);
+            this.Controls.Add(this.lbTitles);
             this.Controls.Add(this.lbVolume);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
@@ -463,7 +482,7 @@
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Label lbVolume;
-        private System.Windows.Forms.ListBox textTitles;
+        private System.Windows.Forms.ListBox lbTitles;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnMode;
@@ -478,6 +497,7 @@
         private System.Windows.Forms.ToolStripMenuItem uNHIDEALLToolStripMenuItem;
         private System.Windows.Forms.TrackBar tbPosition;
         private System.Windows.Forms.Label lbTime;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 
