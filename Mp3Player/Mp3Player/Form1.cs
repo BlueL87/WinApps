@@ -444,6 +444,7 @@ namespace Mp3Player
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (playlist.Count == 0) return;
             player.controls.stop();
             playlist.RemoveAt(lbTitles.SelectedIndex);
             lbTitles.Items.RemoveAt(lbTitles.SelectedIndex);
