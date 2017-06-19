@@ -33,17 +33,18 @@
             this.openFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sAVEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lOADLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hIDEALLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uNHIDEALLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vERSIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aUTHORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cHANGEBACKGROUNDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
             this.btnUp = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.lbVolume = new System.Windows.Forms.Label();
-            this.lbTitles = new System.Windows.Forms.ListBox();
+            this.textTitles = new System.Windows.Forms.ListBox();
             this.btnClean = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnMode = new System.Windows.Forms.Button();
@@ -51,7 +52,11 @@
             this.btnNext = new System.Windows.Forms.Button();
             this.btnSaveList = new System.Windows.Forms.Button();
             this.btnLoadList = new System.Windows.Forms.Button();
+            this.lbState = new System.Windows.Forms.Label();
+            this.tbPosition = new System.Windows.Forms.TrackBar();
+            this.lbTime = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -60,8 +65,9 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fILEToolStripMenuItem,
-            this.aBOUTToolStripMenuItem,
-            this.cHANGEBACKGROUNDToolStripMenuItem});
+            this.hIDEALLToolStripMenuItem,
+            this.uNHIDEALLToolStripMenuItem,
+            this.aBOUTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(985, 26);
@@ -103,6 +109,21 @@
             this.lOADLISTToolStripMenuItem.Text = "LOAD LIST";
             this.lOADLISTToolStripMenuItem.Click += new System.EventHandler(this.lOADLISTToolStripMenuItem_Click);
             // 
+            // hIDEALLToolStripMenuItem
+            // 
+            this.hIDEALLToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hIDEALLToolStripMenuItem.Name = "hIDEALLToolStripMenuItem";
+            this.hIDEALLToolStripMenuItem.Size = new System.Drawing.Size(56, 22);
+            this.hIDEALLToolStripMenuItem.Text = "HIDE";
+            this.hIDEALLToolStripMenuItem.Click += new System.EventHandler(this.hIDEALLToolStripMenuItem_Click);
+            // 
+            // uNHIDEALLToolStripMenuItem
+            // 
+            this.uNHIDEALLToolStripMenuItem.Name = "uNHIDEALLToolStripMenuItem";
+            this.uNHIDEALLToolStripMenuItem.Size = new System.Drawing.Size(78, 22);
+            this.uNHIDEALLToolStripMenuItem.Text = "UNHIDE";
+            this.uNHIDEALLToolStripMenuItem.Click += new System.EventHandler(this.uNHIDEALLToolStripMenuItem_Click);
+            // 
             // aBOUTToolStripMenuItem
             // 
             this.aBOUTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -128,14 +149,6 @@
             this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.aUTHORToolStripMenuItem.Text = "AUTHOR";
             this.aUTHORToolStripMenuItem.Click += new System.EventHandler(this.aUTHORToolStripMenuItem_Click);
-            // 
-            // cHANGEBACKGROUNDToolStripMenuItem
-            // 
-            this.cHANGEBACKGROUNDToolStripMenuItem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cHANGEBACKGROUNDToolStripMenuItem.Name = "cHANGEBACKGROUNDToolStripMenuItem";
-            this.cHANGEBACKGROUNDToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
-            this.cHANGEBACKGROUNDToolStripMenuItem.Text = "CHANGE BACKGROUND";
-            this.cHANGEBACKGROUNDToolStripMenuItem.Click += new System.EventHandler(this.cHANGEBACKGROUNDToolStripMenuItem_Click);
             // 
             // btnStop
             // 
@@ -222,25 +235,25 @@
             this.lbVolume.BackColor = System.Drawing.Color.Transparent;
             this.lbVolume.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVolume.ForeColor = System.Drawing.Color.Maroon;
-            this.lbVolume.Location = new System.Drawing.Point(738, 174);
+            this.lbVolume.Location = new System.Drawing.Point(410, 218);
             this.lbVolume.Name = "lbVolume";
-            this.lbVolume.Size = new System.Drawing.Size(56, 33);
+            this.lbVolume.Size = new System.Drawing.Size(102, 33);
             this.lbVolume.TabIndex = 6;
-            this.lbVolume.Text = "70";
+            this.lbVolume.Text = "Volume 70";
             this.lbVolume.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lbTitles
+            // textTitles
             // 
-            this.lbTitles.BackColor = System.Drawing.Color.White;
-            this.lbTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitles.ForeColor = System.Drawing.Color.Maroon;
-            this.lbTitles.FormattingEnabled = true;
-            this.lbTitles.ItemHeight = 18;
-            this.lbTitles.Location = new System.Drawing.Point(12, 254);
-            this.lbTitles.Name = "lbTitles";
-            this.lbTitles.Size = new System.Drawing.Size(500, 202);
-            this.lbTitles.TabIndex = 12;
-            this.lbTitles.SelectedIndexChanged += new System.EventHandler(this.lbTitles_SelectedIndexChanged);
+            this.textTitles.BackColor = System.Drawing.Color.White;
+            this.textTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textTitles.ForeColor = System.Drawing.Color.Maroon;
+            this.textTitles.FormattingEnabled = true;
+            this.textTitles.ItemHeight = 18;
+            this.textTitles.Location = new System.Drawing.Point(12, 254);
+            this.textTitles.Name = "textTitles";
+            this.textTitles.Size = new System.Drawing.Size(500, 202);
+            this.textTitles.TabIndex = 12;
+            this.textTitles.SelectedIndexChanged += new System.EventHandler(this.lbTitles_SelectedIndexChanged);
             // 
             // btnClean
             // 
@@ -350,6 +363,42 @@
             this.btnLoadList.UseVisualStyleBackColor = false;
             this.btnLoadList.Click += new System.EventHandler(this.btnLoadList_Click);
             // 
+            // lbState
+            // 
+            this.lbState.BackColor = System.Drawing.Color.Transparent;
+            this.lbState.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbState.ForeColor = System.Drawing.Color.Maroon;
+            this.lbState.Location = new System.Drawing.Point(12, 218);
+            this.lbState.Name = "lbState";
+            this.lbState.Size = new System.Drawing.Size(88, 33);
+            this.lbState.TabIndex = 21;
+            this.lbState.Text = "Waiting";
+            this.lbState.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // tbPosition
+            // 
+            this.tbPosition.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.tbPosition.BackColor = System.Drawing.Color.White;
+            this.tbPosition.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tbPosition.Location = new System.Drawing.Point(12, 159);
+            this.tbPosition.Maximum = 100;
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(500, 56);
+            this.tbPosition.TabIndex = 22;
+            this.tbPosition.Scroll += new System.EventHandler(this.tbPosition_Scroll);
+            // 
+            // lbTime
+            // 
+            this.lbTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTime.ForeColor = System.Drawing.Color.Maroon;
+            this.lbTime.Location = new System.Drawing.Point(106, 218);
+            this.lbTime.Name = "lbTime";
+            this.lbTime.Size = new System.Drawing.Size(252, 33);
+            this.lbTime.TabIndex = 23;
+            this.lbTime.Text = "00:00:00 / 00:00:00";
+            this.lbTime.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -357,6 +406,9 @@
             this.BackgroundImage = global::Mp3Player.Properties.Resources._529320;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(985, 505);
+            this.Controls.Add(this.lbTime);
+            this.Controls.Add(this.tbPosition);
+            this.Controls.Add(this.lbState);
             this.Controls.Add(this.btnLoadList);
             this.Controls.Add(this.btnSaveList);
             this.Controls.Add(this.btnNext);
@@ -364,7 +416,7 @@
             this.Controls.Add(this.btnMode);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClean);
-            this.Controls.Add(this.lbTitles);
+            this.Controls.Add(this.textTitles);
             this.Controls.Add(this.lbVolume);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnUp);
@@ -377,8 +429,10 @@
             this.MaximumSize = new System.Drawing.Size(1003, 552);
             this.MinimumSize = new System.Drawing.Size(1003, 552);
             this.Name = "Form1";
+            this.Text = "Blue\'s Musicplayer";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +452,7 @@
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Label lbVolume;
-        private System.Windows.Forms.ListBox lbTitles;
+        private System.Windows.Forms.ListBox textTitles;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnMode;
@@ -408,7 +462,11 @@
         private System.Windows.Forms.Button btnLoadList;
         private System.Windows.Forms.ToolStripMenuItem sAVEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lOADLISTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cHANGEBACKGROUNDToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem hIDEALLToolStripMenuItem;
+        private System.Windows.Forms.Label lbState;
+        private System.Windows.Forms.ToolStripMenuItem uNHIDEALLToolStripMenuItem;
+        private System.Windows.Forms.TrackBar tbPosition;
+        private System.Windows.Forms.Label lbTime;
     }
 }
 

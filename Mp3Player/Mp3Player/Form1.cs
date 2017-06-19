@@ -16,10 +16,10 @@ namespace Mp3Player
     {
         private const string _LIST_HEADER = "LIST_STEVE_PLAYER";
         private WMPLib.WindowsMediaPlayer player;
-        private ArrayList list;
-        private int mode;
+        private ArrayList playlist;
+        private int playMode;
         private int nextSong, currentSong;
-        private Timer timer;
+        private Timer songFinishedTimer, playingTimer;
 
         public Form1()
         {
@@ -30,28 +30,45 @@ namespace Mp3Player
         private void InitPlayer()
         {
             player = new WMPLib.WindowsMediaPlayer();
-            list = new ArrayList();
-            timer = new Timer();
+            playlist = new ArrayList();
+            songFinishedTimer = new Timer();
+            playingTimer = new Timer();
             player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(playStateChange);
             setVolume(70);
             setMode(0);
             resetCurrentAndNext();
-            timer.Interval = 10;
-            timer.Stop();
-            timer.Tick += new EventHandler(playNext);
+            songFinishedTimer.Interval = 10;
+            songFinishedTimer.Stop();
+            songFinishedTimer.Tick += new EventHandler(playNext);
         }
 
         private void playStateChange(int NewState)
         {
             if (NewState == (int)WMPLib.WMPPlayState.wmppsMediaEnded)
             {
-                timer.Start();
+                songFinishedTimer.Start();
+            }
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsPlaying)
+            {
+                lbState.Text = "Playing";
+            }
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsPaused)
+            {
+                lbState.Text = "Paused";
+            }
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsWaiting)
+            {
+                lbState.Text = "Waiting";
+            }
+            if (NewState == (int)WMPLib.WMPPlayState.wmppsStopped)
+            {
+                lbState.Text = "Stopped";
             }
         }
 
         private void playNext(object sender, EventArgs e)
         {
-            timer.Stop();
+            songFinishedTimer.Stop();
             findNext();
             play();
         }
@@ -64,7 +81,7 @@ namespace Mp3Player
 
         private void setMode(int i)
         {
-            mode = i;
+            playMode = i;
             switch (i)
             {
                 case 0:
@@ -108,17 +125,20 @@ namespace Mp3Player
 
         private void btnStop_Click(object sender, EventArgs e)
         {
+            playingTimer.Stop();
             player.controls.stop();
+            lbTime.Text = "00:00:00 / 00:00:00";
         }
 
         private void btnPause_Click(object sender, EventArgs e)
         {
+            playingTimer.Stop();
             player.controls.pause();
         }
 
         private void btnPlay_Click(object sender, EventArgs e)
         {
-            if (list.Count == 0)
+            if (playlist.Count == 0)
             {
                 cleanList();
                 InitMusicSelectionDlg();
@@ -145,16 +165,19 @@ namespace Mp3Player
                             foreach (string x in oDlg.FileNames)
                             {
                                 if (x.Length < 5) continue;
-                                else if (x.Substring(x.Length - 4) != ".mp3" && x.Substring(x.Length - 4) != ".wma" && x.Substring(x.Length - 5) != ".flac") continue;
-                                list.Add(x);
-                                lbTitles.Items.Add(x);
+                                else if (x.Substring(x.Length - 4) != ".mp3"
+                                    && x.Substring(x.Length - 4) != ".wma"
+                                    && x.Substring(x.Length - 5) != ".flac"
+                                    ) continue;
+                                playlist.Add(x);
+                                textTitles.Items.Add(x);
                             }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not play the file. Original error: " + ex.Message);
+                    MessageBox.Show("Failed to play the file! Error: " + ex.Message);
                 }
             }
         }
@@ -174,12 +197,12 @@ namespace Mp3Player
         private void setVolume(int value)
         {
             player.settings.volume = value;
-            lbVolume.Text = player.settings.volume.ToString();
+            lbVolume.Text = "Volume " + player.settings.volume.ToString();
         }
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
         {
-            nextSong = lbTitles.SelectedIndex;
+            nextSong = textTitles.SelectedIndex;
             if (currentSong != nextSong)
                 play();
         }
@@ -188,26 +211,41 @@ namespace Mp3Player
         {
             if (currentSong == nextSong)
                 player.controls.play();
-            else if (list.Count > 0 && nextSong > 0 && nextSong < list.Count)
+            else if (playlist.Count > 0 && nextSong > 0 && nextSong < playlist.Count)
             {
                 player.controls.stop();
-                player.URL = (string)list[nextSong];
+                player.URL = (string)playlist[nextSong];
                 currentSong = nextSong;
                 player.controls.play();
             }
-            else if (list.Count > 0)
+            else if (playlist.Count > 0)
             {
                 currentSong = 0;
                 nextSong = 0;
-                player.URL = (string)list[nextSong];
+                player.URL = (string)playlist[nextSong];
                 player.controls.play();
             }
+            playingTimer.Start();
+            playingTimer.Interval = 10;
+            playingTimer.Tick += new EventHandler(playingStatus);
+        }
+
+        private void playingStatus(object sender, EventArgs e)
+        {
+            double currentPos = player.controls.currentPosition;
+            double length = player.currentMedia.duration;
+            if (length <= 0) return;
+            double currentPercentage = currentPos / length * 100;
+            tbPosition.Value = (int)currentPercentage;
+            TimeSpan timeFormatCurrent = TimeSpan.FromSeconds(currentPos);
+            TimeSpan timeFormatLength = TimeSpan.FromSeconds(length);
+            lbTime.Text = timeFormatCurrent.ToString(@"hh\:mm\:ss\:") + " / " + timeFormatLength.ToString(@"hh\:mm\:ss\:");
         }
 
         private void cleanList()
         {
-            lbTitles.Items.Clear();
-            list.Clear();
+            textTitles.Items.Clear();
+            playlist.Clear();
         }
 
         private void btnClean_Click(object sender, EventArgs e)
@@ -226,9 +264,9 @@ namespace Mp3Player
 
         private void btnMode_Click(object sender, EventArgs e)
         {
-            ++mode;
-            if (mode > 3) mode = 0;
-            setMode(mode);
+            ++playMode;
+            if (playMode > 3) playMode = 0;
+            setMode(playMode);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -252,21 +290,21 @@ namespace Mp3Player
 
         private void findNext()
         {
-            if (mode == 0 || mode == 2)
+            if (playMode == 0 || playMode == 2)
             {
                 nextSong = currentSong + 1;
-                if (nextSong >= list.Count) nextSong = 0;
-                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
+                if (nextSong >= playlist.Count) nextSong = 0;
+                if (nextSong < textTitles.Items.Count) textTitles.SelectedIndex = nextSong;
             }
-            else if (mode == 1)
+            else if (playMode == 1)
             {
                 nextSong = currentSong;
             }
             else
             {
                 Random rnd = new Random();
-                nextSong = rnd.Next(0, list.Count);
-                if (nextSong < lbTitles.Items.Count) lbTitles.SelectedIndex = nextSong;
+                nextSong = rnd.Next(0, playlist.Count);
+                if (nextSong < textTitles.Items.Count) textTitles.SelectedIndex = nextSong;
             }
         }
 
@@ -295,8 +333,8 @@ namespace Mp3Player
                             while (!sr.EndOfStream)
                             {
                                 currentLine = sr.ReadLine();
-                                list.Add(currentLine);
-                                lbTitles.Items.Add(currentLine);
+                                playlist.Add(currentLine);
+                                textTitles.Items.Add(currentLine);
                             }
                             sr.Close();
                         }
@@ -304,7 +342,7 @@ namespace Mp3Player
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: Could not play the file. Original error: " + ex.Message);
+                    MessageBox.Show("Failed to load the list! Error: " + ex.Message);
                 }
             }
         }
@@ -321,12 +359,9 @@ namespace Mp3Player
             play();
         }
 
-        private void cHANGEBACKGROUNDToolStripMenuItem_Click(object sender, EventArgs e)
+        private void hIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "换背景还得匹配一个比较好的按钮颜色，我有些懒，还是算了吧...";
-            string caption = "更换背景";
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result = MessageBox.Show(message, caption, buttons);
+            hideAll();
         }
 
         private void saveListDlg()
@@ -338,11 +373,66 @@ namespace Mp3Player
             {
                 StreamWriter writer = new StreamWriter(save.OpenFile());
                 writer.WriteLine(_LIST_HEADER);
-                for (int i = 0; i < list.Count; ++i)
-                    writer.WriteLine(list[i]);
+                for (int i = 0; i < playlist.Count; ++i)
+                    writer.WriteLine(playlist[i]);
                 writer.Dispose();
                 writer.Close();
             }
         }
+
+        private void hideAll()
+        {
+            btnAdd.Hide();
+            btnClean.Hide();
+            btnDown.Hide();
+            btnLoadList.Hide();
+            btnMode.Hide();
+            btnNext.Hide();
+            btnPause.Hide();
+            btnPlay.Hide();
+            btnSaveList.Hide();
+            btnStop.Hide();
+            btnUp.Hide();
+            lbMode.Hide();
+            lbState.Hide();
+            lbVolume.Hide();
+            textTitles.Hide();
+            tbPosition.Hide();
+            lbTime.Hide();
+        }
+
+        private void tbPosition_Scroll(object sender, EventArgs e)
+        {
+            double length = player.currentMedia.duration;
+            if (length <= 0) return;
+            player.controls.currentPosition = tbPosition.Value * length / 100;
+        }
+
+        private void uNHIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            showAll();
+        }
+
+        private void showAll()
+        {
+            btnAdd.Show();
+            btnClean.Show();
+            btnDown.Show();
+            btnLoadList.Show();
+            btnMode.Show();
+            btnNext.Show();
+            btnPause.Show();
+            btnPlay.Show();
+            btnSaveList.Show();
+            btnStop.Show();
+            btnUp.Show();
+            lbMode.Show();
+            lbState.Show();
+            lbVolume.Show();
+            textTitles.Show();
+            tbPosition.Show();
+            lbTime.Show();
+        }
+
     }
 }
