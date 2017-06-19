@@ -318,7 +318,7 @@
             this.lbMode.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lbMode.Location = new System.Drawing.Point(681, 73);
             this.lbMode.Name = "lbMode";
-            this.lbMode.Size = new System.Drawing.Size(230, 33);
+            this.lbMode.Size = new System.Drawing.Size(84, 33);
             this.lbMode.TabIndex = 16;
             this.lbMode.Text = "Standard";
             this.lbMode.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

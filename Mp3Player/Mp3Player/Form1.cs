@@ -168,6 +168,8 @@ namespace Mp3Player
                                 else if (x.Substring(x.Length - 4) != ".mp3"
                                     && x.Substring(x.Length - 4) != ".wma"
                                     && x.Substring(x.Length - 5) != ".flac"
+                                    && x.Substring(x.Length - 4) != ".mp4"
+                                    && x.Substring(x.Length - 4) != ".avi"
                                     ) continue;
                                 playlist.Add(x);
                                 textTitles.Items.Add(x);
@@ -409,8 +411,9 @@ namespace Mp3Player
                 if (length <= 0) return;
                 player.controls.currentPosition = tbPosition.Value * length / 100;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
+                //do nothing
             }
         }
 
