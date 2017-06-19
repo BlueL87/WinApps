@@ -47,6 +47,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>File Types Cd.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -137,10 +140,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\bg.jpg" />
+    <None Include="img\529320.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\529320.jpg" />
+    <Content Include="File Types Cd.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
