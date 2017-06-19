@@ -155,10 +155,11 @@
             this.btnStop.BackColor = System.Drawing.Color.Transparent;
             this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.FlatAppearance.BorderSize = 0;
-            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnStop.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStop.ForeColor = System.Drawing.Color.Maroon;
-            this.btnStop.Location = new System.Drawing.Point(817, 57);
+            this.btnStop.ForeColor = System.Drawing.Color.Teal;
+            this.btnStop.Location = new System.Drawing.Point(751, 40);
+            this.btnStop.Margin = new System.Windows.Forms.Padding(0);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(72, 33);
             this.btnStop.TabIndex = 1;
@@ -171,10 +172,11 @@
             this.btnPlay.BackColor = System.Drawing.Color.Transparent;
             this.btnPlay.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPlay.FlatAppearance.BorderSize = 0;
-            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlay.ForeColor = System.Drawing.Color.Maroon;
-            this.btnPlay.Location = new System.Drawing.Point(659, 57);
+            this.btnPlay.ForeColor = System.Drawing.Color.Teal;
+            this.btnPlay.Location = new System.Drawing.Point(605, 40);
+            this.btnPlay.Margin = new System.Windows.Forms.Padding(0);
             this.btnPlay.Name = "btnPlay";
             this.btnPlay.Size = new System.Drawing.Size(73, 33);
             this.btnPlay.TabIndex = 2;
@@ -187,10 +189,11 @@
             this.btnPause.BackColor = System.Drawing.Color.Transparent;
             this.btnPause.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPause.FlatAppearance.BorderSize = 0;
-            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPause.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.ForeColor = System.Drawing.Color.Maroon;
-            this.btnPause.Location = new System.Drawing.Point(738, 57);
+            this.btnPause.ForeColor = System.Drawing.Color.Teal;
+            this.btnPause.Location = new System.Drawing.Point(678, 40);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(0);
             this.btnPause.Name = "btnPause";
             this.btnPause.Size = new System.Drawing.Size(73, 33);
             this.btnPause.TabIndex = 3;
@@ -203,10 +206,11 @@
             this.btnUp.BackColor = System.Drawing.Color.Transparent;
             this.btnUp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUp.FlatAppearance.BorderSize = 0;
-            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.ForeColor = System.Drawing.Color.Maroon;
-            this.btnUp.Location = new System.Drawing.Point(660, 135);
+            this.btnUp.ForeColor = System.Drawing.Color.Teal;
+            this.btnUp.Location = new System.Drawing.Point(515, 185);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(0);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(72, 33);
             this.btnUp.TabIndex = 4;
@@ -219,10 +223,11 @@
             this.btnDown.BackColor = System.Drawing.Color.Transparent;
             this.btnDown.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDown.FlatAppearance.BorderSize = 0;
-            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.ForeColor = System.Drawing.Color.Maroon;
-            this.btnDown.Location = new System.Drawing.Point(660, 174);
+            this.btnDown.ForeColor = System.Drawing.Color.Teal;
+            this.btnDown.Location = new System.Drawing.Point(515, 218);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(0);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(72, 33);
             this.btnDown.TabIndex = 5;
@@ -234,7 +239,7 @@
             // 
             this.lbVolume.BackColor = System.Drawing.Color.Transparent;
             this.lbVolume.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbVolume.ForeColor = System.Drawing.Color.Maroon;
+            this.lbVolume.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lbVolume.Location = new System.Drawing.Point(410, 218);
             this.lbVolume.Name = "lbVolume";
             this.lbVolume.Size = new System.Drawing.Size(102, 33);
@@ -246,7 +251,7 @@
             // 
             this.textTitles.BackColor = System.Drawing.Color.White;
             this.textTitles.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textTitles.ForeColor = System.Drawing.Color.Maroon;
+            this.textTitles.ForeColor = System.Drawing.Color.Teal;
             this.textTitles.FormattingEnabled = true;
             this.textTitles.ItemHeight = 18;
             this.textTitles.Location = new System.Drawing.Point(12, 254);
@@ -260,10 +265,11 @@
             this.btnClean.BackColor = System.Drawing.Color.Transparent;
             this.btnClean.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClean.FlatAppearance.BorderSize = 0;
-            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClean.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClean.ForeColor = System.Drawing.Color.Maroon;
-            this.btnClean.Location = new System.Drawing.Point(91, 96);
+            this.btnClean.ForeColor = System.Drawing.Color.Teal;
+            this.btnClean.Location = new System.Drawing.Point(82, 73);
+            this.btnClean.Margin = new System.Windows.Forms.Padding(0);
             this.btnClean.Name = "btnClean";
             this.btnClean.Size = new System.Drawing.Size(73, 33);
             this.btnClean.TabIndex = 13;
@@ -276,10 +282,11 @@
             this.btnAdd.BackColor = System.Drawing.Color.Transparent;
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.Maroon;
-            this.btnAdd.Location = new System.Drawing.Point(12, 96);
+            this.btnAdd.ForeColor = System.Drawing.Color.Teal;
+            this.btnAdd.Location = new System.Drawing.Point(9, 73);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(73, 33);
             this.btnAdd.TabIndex = 14;
@@ -292,10 +299,11 @@
             this.btnMode.BackColor = System.Drawing.Color.Transparent;
             this.btnMode.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMode.FlatAppearance.BorderSize = 0;
-            this.btnMode.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMode.ForeColor = System.Drawing.Color.Maroon;
-            this.btnMode.Location = new System.Drawing.Point(660, 96);
+            this.btnMode.ForeColor = System.Drawing.Color.Teal;
+            this.btnMode.Location = new System.Drawing.Point(606, 73);
+            this.btnMode.Margin = new System.Windows.Forms.Padding(0);
             this.btnMode.Name = "btnMode";
             this.btnMode.Size = new System.Drawing.Size(72, 33);
             this.btnMode.TabIndex = 15;
@@ -307,8 +315,8 @@
             // 
             this.lbMode.BackColor = System.Drawing.Color.Transparent;
             this.lbMode.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMode.ForeColor = System.Drawing.Color.Maroon;
-            this.lbMode.Location = new System.Drawing.Point(738, 96);
+            this.lbMode.ForeColor = System.Drawing.Color.DarkTurquoise;
+            this.lbMode.Location = new System.Drawing.Point(681, 73);
             this.lbMode.Name = "lbMode";
             this.lbMode.Size = new System.Drawing.Size(230, 33);
             this.lbMode.TabIndex = 16;
@@ -320,10 +328,11 @@
             this.btnNext.BackColor = System.Drawing.Color.Transparent;
             this.btnNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNext.FlatAppearance.BorderSize = 0;
-            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNext.ForeColor = System.Drawing.Color.Maroon;
-            this.btnNext.Location = new System.Drawing.Point(895, 57);
+            this.btnNext.ForeColor = System.Drawing.Color.Teal;
+            this.btnNext.Location = new System.Drawing.Point(823, 40);
+            this.btnNext.Margin = new System.Windows.Forms.Padding(0);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(73, 33);
             this.btnNext.TabIndex = 18;
@@ -336,10 +345,11 @@
             this.btnSaveList.BackColor = System.Drawing.Color.Transparent;
             this.btnSaveList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSaveList.FlatAppearance.BorderSize = 0;
-            this.btnSaveList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnSaveList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveList.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSaveList.Location = new System.Drawing.Point(12, 57);
+            this.btnSaveList.ForeColor = System.Drawing.Color.Teal;
+            this.btnSaveList.Location = new System.Drawing.Point(9, 40);
+            this.btnSaveList.Margin = new System.Windows.Forms.Padding(0);
             this.btnSaveList.Name = "btnSaveList";
             this.btnSaveList.Size = new System.Drawing.Size(73, 33);
             this.btnSaveList.TabIndex = 19;
@@ -352,10 +362,11 @@
             this.btnLoadList.BackColor = System.Drawing.Color.Transparent;
             this.btnLoadList.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadList.FlatAppearance.BorderSize = 0;
-            this.btnLoadList.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnLoadList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLoadList.ForeColor = System.Drawing.Color.Maroon;
-            this.btnLoadList.Location = new System.Drawing.Point(91, 57);
+            this.btnLoadList.ForeColor = System.Drawing.Color.Teal;
+            this.btnLoadList.Location = new System.Drawing.Point(82, 40);
+            this.btnLoadList.Margin = new System.Windows.Forms.Padding(0);
             this.btnLoadList.Name = "btnLoadList";
             this.btnLoadList.Size = new System.Drawing.Size(73, 33);
             this.btnLoadList.TabIndex = 20;
@@ -367,7 +378,7 @@
             // 
             this.lbState.BackColor = System.Drawing.Color.Transparent;
             this.lbState.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbState.ForeColor = System.Drawing.Color.Maroon;
+            this.lbState.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lbState.Location = new System.Drawing.Point(12, 218);
             this.lbState.Name = "lbState";
             this.lbState.Size = new System.Drawing.Size(88, 33);
@@ -391,7 +402,7 @@
             // 
             this.lbTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTime.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTime.ForeColor = System.Drawing.Color.Maroon;
+            this.lbTime.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.lbTime.Location = new System.Drawing.Point(106, 218);
             this.lbTime.Name = "lbTime";
             this.lbTime.Size = new System.Drawing.Size(252, 33);
@@ -424,7 +435,7 @@
             this.Controls.Add(this.btnPlay);
             this.Controls.Add(this.btnStop);
             this.Controls.Add(this.menuStrip1);
-            this.ForeColor = System.Drawing.Color.Maroon;
+            this.ForeColor = System.Drawing.Color.Teal;
             this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(1003, 552);
             this.MinimumSize = new System.Drawing.Size(1003, 552);

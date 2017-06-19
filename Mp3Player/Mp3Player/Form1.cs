@@ -112,7 +112,7 @@ namespace Mp3Player
 
         private void vERSIONToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Version  Luna-1.0.0";
+            string message = "Version  Luna-1.0.1";
             string caption = "Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, caption, buttons);
@@ -239,7 +239,7 @@ namespace Mp3Player
             tbPosition.Value = (int)currentPercentage;
             TimeSpan timeFormatCurrent = TimeSpan.FromSeconds(currentPos);
             TimeSpan timeFormatLength = TimeSpan.FromSeconds(length);
-            lbTime.Text = timeFormatCurrent.ToString(@"hh\:mm\:ss\:") + " / " + timeFormatLength.ToString(@"hh\:mm\:ss\:");
+            lbTime.Text = timeFormatCurrent.ToString(@"hh\:mm\:ss") + " / " + timeFormatLength.ToString(@"hh\:mm\:ss");
         }
 
         private void cleanList()
@@ -403,9 +403,15 @@ namespace Mp3Player
 
         private void tbPosition_Scroll(object sender, EventArgs e)
         {
-            double length = player.currentMedia.duration;
-            if (length <= 0) return;
-            player.controls.currentPosition = tbPosition.Value * length / 100;
+            try
+            {
+                double length = player.currentMedia.duration;
+                if (length <= 0) return;
+                player.controls.currentPosition = tbPosition.Value * length / 100;
+            }
+            catch(Exception ex)
+            {
+            }
         }
 
         private void uNHIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
