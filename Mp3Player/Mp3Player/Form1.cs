@@ -234,10 +234,13 @@ namespace Mp3Player
                 player.URL = (string)playlist[nextSong];
                 player.controls.play();
             }
-            lbTitles.SelectedIndex = nextSong;
-            playingTimer.Start();
-            playingTimer.Interval = 10;
-            playingTimer.Tick += new EventHandler(playingStatus);
+            if (nextSong >= 0 && nextSong < playlist.Count)
+            {
+                lbTitles.SelectedIndex = nextSong;
+                playingTimer.Start();
+                playingTimer.Interval = 10;
+                playingTimer.Tick += new EventHandler(playingStatus);
+            }
         }
 
         private void playingStatus(object sender, EventArgs e)
