@@ -234,6 +234,7 @@ namespace Mp3Player
                 player.URL = (string)playlist[nextSong];
                 player.controls.play();
             }
+            lbTitles.SelectedIndex = nextSong;
             playingTimer.Start();
             playingTimer.Interval = 10;
             playingTimer.Tick += new EventHandler(playingStatus);
