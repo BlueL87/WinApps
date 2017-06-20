@@ -304,9 +304,7 @@ namespace Mp3Player
 
         private void btnLoadList_Click(object sender, EventArgs e)
         {
-            cleanList();
             loadListDlg();
-            play();
         }
 
         private void findNext()
