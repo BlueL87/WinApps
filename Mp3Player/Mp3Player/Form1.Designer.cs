@@ -62,6 +62,7 @@
             this.btnSingleRepeat = new System.Windows.Forms.Button();
             this.btnRepeatAll = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
+            this.dONATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).BeginInit();
             this.SuspendLayout();
@@ -74,7 +75,8 @@
             this.fILEToolStripMenuItem,
             this.hIDEALLToolStripMenuItem,
             this.uNHIDEALLToolStripMenuItem,
-            this.aBOUTToolStripMenuItem});
+            this.aBOUTToolStripMenuItem,
+            this.dONATEToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
@@ -557,6 +559,15 @@
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
+            // dONATEToolStripMenuItem
+            // 
+            this.dONATEToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dONATEToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.dONATEToolStripMenuItem.Name = "dONATEToolStripMenuItem";
+            this.dONATEToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.dONATEToolStripMenuItem.Text = "DONATE";
+            this.dONATEToolStripMenuItem.Click += new System.EventHandler(this.dONATEToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -639,6 +650,7 @@
         private System.Windows.Forms.Button btnSingleRepeat;
         private System.Windows.Forms.Button btnRepeatAll;
         private System.Windows.Forms.Button btnLast;
+        private System.Windows.Forms.ToolStripMenuItem dONATEToolStripMenuItem;
     }
 }
 

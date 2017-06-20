@@ -505,6 +505,14 @@ namespace Mp3Player
             if (nextSong < 0) nextSong = playlist.Count - 1;
         }
 
+        private void dONATEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string message = "Please donate more to charity!";
+            string caption = "Life is hard";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result = MessageBox.Show(message, caption, buttons);
+        }
+
         private void uNHIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showAll();
