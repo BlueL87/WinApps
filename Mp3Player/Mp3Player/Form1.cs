@@ -337,7 +337,7 @@ namespace Mp3Player
             System.IO.Stream myStream = null;
             OpenFileDialog oDlg = new OpenFileDialog();
             oDlg.Filter = "ListFile (*.lst)|*.lst";
-            oDlg.Multiselect = false;
+            oDlg.Multiselect = true;
             currentSong = -3;
             if (oDlg.ShowDialog() == DialogResult.OK)
             {
@@ -347,20 +347,23 @@ namespace Mp3Player
                     {
                         using (myStream)
                         {
-                            StreamReader sr = new StreamReader(oDlg.FileName);
-                            string currentLine = sr.ReadLine();
-                            if (currentLine != _LIST_HEADER)
+                            foreach (string x in oDlg.FileNames)
                             {
+                                StreamReader sr = new StreamReader(x);
+                                string currentLine = sr.ReadLine();
+                                if (currentLine != _LIST_HEADER)
+                                {
+                                    sr.Close();
+                                    return;
+                                }
+                                while (!sr.EndOfStream)
+                                {
+                                    currentLine = sr.ReadLine();
+                                    playlist.Add(currentLine);
+                                    lbTitles.Items.Add(currentLine);
+                                }
                                 sr.Close();
-                                return;
                             }
-                            while (!sr.EndOfStream)
-                            {
-                                currentLine = sr.ReadLine();
-                                playlist.Add(currentLine);
-                                lbTitles.Items.Add(currentLine);
-                            }
-                            sr.Close();
                         }
                     }
                 }
