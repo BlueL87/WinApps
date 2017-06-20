@@ -61,6 +61,7 @@
             this.btnShuffle = new System.Windows.Forms.Button();
             this.btnSingleRepeat = new System.Windows.Forms.Button();
             this.btnRepeatAll = new System.Windows.Forms.Button();
+            this.btnLast = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             // 
             this.openFileToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.openFileToolStripMenuItem.Text = "OPEN";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
@@ -103,7 +104,7 @@
             // 
             this.sAVEToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sAVEToolStripMenuItem.Name = "sAVEToolStripMenuItem";
-            this.sAVEToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.sAVEToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.sAVEToolStripMenuItem.Text = "SAVE LIST";
             this.sAVEToolStripMenuItem.Click += new System.EventHandler(this.sAVEToolStripMenuItem_Click);
             // 
@@ -111,7 +112,7 @@
             // 
             this.lOADLISTToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lOADLISTToolStripMenuItem.Name = "lOADLISTToolStripMenuItem";
-            this.lOADLISTToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.lOADLISTToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
             this.lOADLISTToolStripMenuItem.Text = "LOAD LIST";
             this.lOADLISTToolStripMenuItem.Click += new System.EventHandler(this.lOADLISTToolStripMenuItem_Click);
             // 
@@ -145,7 +146,7 @@
             // 
             this.vERSIONToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.vERSIONToolStripMenuItem.Name = "vERSIONToolStripMenuItem";
-            this.vERSIONToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.vERSIONToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.vERSIONToolStripMenuItem.Text = "VERSION";
             this.vERSIONToolStripMenuItem.Click += new System.EventHandler(this.vERSIONToolStripMenuItem_Click);
             // 
@@ -153,7 +154,7 @@
             // 
             this.aUTHORToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.aUTHORToolStripMenuItem.Name = "aUTHORToolStripMenuItem";
-            this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.aUTHORToolStripMenuItem.Text = "AUTHOR";
             this.aUTHORToolStripMenuItem.Click += new System.EventHandler(this.aUTHORToolStripMenuItem_Click);
             // 
@@ -538,6 +539,24 @@
             this.btnRepeatAll.UseVisualStyleBackColor = false;
             this.btnRepeatAll.Click += new System.EventHandler(this.btnRepeatAll_Click);
             // 
+            // btnLast
+            // 
+            this.btnLast.BackColor = System.Drawing.Color.Transparent;
+            this.btnLast.BackgroundImage = global::Mp3Player.Properties.Resources.Danieledesantis_Audio_Video_Outline_First_track;
+            this.btnLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLast.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLast.FlatAppearance.BorderSize = 0;
+            this.btnLast.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLast.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLast.ForeColor = System.Drawing.Color.Teal;
+            this.btnLast.Location = new System.Drawing.Point(100, 151);
+            this.btnLast.Margin = new System.Windows.Forms.Padding(0);
+            this.btnLast.Name = "btnLast";
+            this.btnLast.Size = new System.Drawing.Size(35, 33);
+            this.btnLast.TabIndex = 30;
+            this.btnLast.UseVisualStyleBackColor = false;
+            this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -545,6 +564,7 @@
             this.BackgroundImage = global::Mp3Player.Properties.Resources._529320;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btnLast);
             this.Controls.Add(this.btnRepeatAll);
             this.Controls.Add(this.btnSingleRepeat);
             this.Controls.Add(this.btnShuffle);
@@ -618,6 +638,7 @@
         private System.Windows.Forms.Button btnShuffle;
         private System.Windows.Forms.Button btnSingleRepeat;
         private System.Windows.Forms.Button btnRepeatAll;
+        private System.Windows.Forms.Button btnLast;
     }
 }
 

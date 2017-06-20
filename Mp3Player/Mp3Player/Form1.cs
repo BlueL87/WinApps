@@ -436,6 +436,7 @@ namespace Mp3Player
             btnShuffle.Hide();
             btnRepeatAll.Hide();
             btnSingleRepeat.Hide();
+            btnLast.Hide();
         }
 
         private void tbPosition_Scroll(object sender, EventArgs e)
@@ -491,6 +492,19 @@ namespace Mp3Player
             setMode(2);
         }
 
+        private void btnLast_Click(object sender, EventArgs e)
+        {
+            player.controls.stop();
+            findLast();
+            play();
+        }
+
+        private void findLast()
+        {
+            --nextSong;
+            if (nextSong < 0) nextSong = playlist.Count - 1;
+        }
+
         private void uNHIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showAll();
@@ -521,6 +535,7 @@ namespace Mp3Player
             btnShuffle.Show();
             btnRepeatAll.Show();
             btnSingleRepeat.Show();
+            btnLast.Show();
         }
 
     }

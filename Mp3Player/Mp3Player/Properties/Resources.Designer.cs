@@ -123,6 +123,16 @@ namespace Mp3Player.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_First_track {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-First-track", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Last_track {
             get {
                 object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Last-track", resourceCulture);

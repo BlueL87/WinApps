@@ -144,6 +144,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="File Types Cd.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-First-track.ico" />
     <None Include="img\Icons8-Ios7-Programming-Show-Property.ico" />
     <None Include="img\Iconsmind-Outline-Add.ico" />
     <None Include="img\Iconsmind-Outline-Save.ico" />

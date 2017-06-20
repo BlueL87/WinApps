@@ -145,6 +145,9 @@
   <data name="Danieledesantis-Audio-Video-Outline-Stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Danieledesantis-Audio-Video-Outline-Stop.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Icons8-Ios7-Programming-Show-Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Icons8-Ios7-Programming-Show-Property.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Icons8-Ios7-Files-Delete-File" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Icons8-Ios7-Files-Delete-File.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -178,7 +181,7 @@
   <data name="Custom-Icon-Design-Mono-General-2-Document" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\Custom-Icon-Design-Mono-General-2-Document.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icons8-Ios7-Programming-Show-Property" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\Icons8-Ios7-Programming-Show-Property.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Danieledesantis-Audio-Video-Outline-First-track" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\Danieledesantis-Audio-Video-Outline-First-track.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
