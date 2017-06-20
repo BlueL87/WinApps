@@ -303,7 +303,7 @@
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.ForeColor = System.Drawing.Color.Teal;
-            this.btnAdd.Location = new System.Drawing.Point(15, 131);
+            this.btnAdd.Location = new System.Drawing.Point(9, 128);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(0);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(44, 33);
@@ -371,7 +371,7 @@
             this.btnSaveList.Location = new System.Drawing.Point(15, 40);
             this.btnSaveList.Margin = new System.Windows.Forms.Padding(0);
             this.btnSaveList.Name = "btnSaveList";
-            this.btnSaveList.Size = new System.Drawing.Size(44, 33);
+            this.btnSaveList.Size = new System.Drawing.Size(30, 33);
             this.btnSaveList.TabIndex = 19;
             this.btnSaveList.UseVisualStyleBackColor = false;
             this.btnSaveList.Click += new System.EventHandler(this.btnSaveList_Click);
@@ -386,10 +386,10 @@
             this.btnLoadList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLoadList.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadList.ForeColor = System.Drawing.Color.Teal;
-            this.btnLoadList.Location = new System.Drawing.Point(15, 86);
+            this.btnLoadList.Location = new System.Drawing.Point(7, 84);
             this.btnLoadList.Margin = new System.Windows.Forms.Padding(0);
             this.btnLoadList.Name = "btnLoadList";
-            this.btnLoadList.Size = new System.Drawing.Size(44, 33);
+            this.btnLoadList.Size = new System.Drawing.Size(50, 36);
             this.btnLoadList.TabIndex = 20;
             this.btnLoadList.UseVisualStyleBackColor = false;
             this.btnLoadList.Click += new System.EventHandler(this.btnLoadList_Click);
