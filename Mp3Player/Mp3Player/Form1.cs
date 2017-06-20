@@ -95,7 +95,7 @@ namespace Mp3Player
                     lbMode.Text = "Single Repeat";
                     break;
                 case 2:
-                    lbMode.Text = "Loop All";
+                    lbMode.Text = "Repeat All";
                     break;
                 case 3:
                     lbMode.Text = "Shuffle";
