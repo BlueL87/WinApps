@@ -267,6 +267,7 @@
             this.lbTitles.Font = new System.Drawing.Font("Lucida Handwriting", 7.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitles.ForeColor = System.Drawing.Color.Black;
             this.lbTitles.FormattingEnabled = true;
+            this.lbTitles.HorizontalScrollbar = true;
             this.lbTitles.ItemHeight = 16;
             this.lbTitles.Location = new System.Drawing.Point(15, 463);
             this.lbTitles.Name = "lbTitles";
