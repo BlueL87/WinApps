@@ -571,6 +571,8 @@
             this.Controls.Add(this.menuStrip1);
             this.ForeColor = System.Drawing.Color.Teal;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "Form1";
             this.Text = "Blue\'s Musicplayer";
             this.menuStrip1.ResumeLayout(false);
