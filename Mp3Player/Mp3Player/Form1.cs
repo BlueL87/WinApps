@@ -21,6 +21,7 @@ namespace Mp3Player
         private int nextSong, currentSong;
         private Timer songFinishedTimer, playingTimer;
         private bool standardModePlayFinished;
+        private int currentVolume;
 
         public Form1()
         {
@@ -30,12 +31,13 @@ namespace Mp3Player
 
         private void InitPlayer()
         {
+            currentVolume = 70;
             player = new WMPLib.WindowsMediaPlayer();
             playlist = new ArrayList();
             songFinishedTimer = new Timer();
             playingTimer = new Timer();
             player.PlayStateChange += new WMPLib._WMPOCXEvents_PlayStateChangeEventHandler(playStateChange);
-            setVolume(70);
+            setVolume(currentVolume);
             setMode(0);
             resetCurrentAndNext();
             songFinishedTimer.Interval = 10;
@@ -90,7 +92,7 @@ namespace Mp3Player
                     lbMode.Text = "Standard";
                     break;
                 case 1:
-                    lbMode.Text = "Single";
+                    lbMode.Text = "Single Repeat";
                     break;
                 case 2:
                     lbMode.Text = "Loop All";
@@ -114,7 +116,7 @@ namespace Mp3Player
 
         private void vERSIONToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "Version  Luna-1.0.1";
+            string message = "Version  Mercury-1.1.0";
             string caption = "Version";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             DialogResult result = MessageBox.Show(message, caption, buttons);
@@ -201,7 +203,8 @@ namespace Mp3Player
         private void setVolume(int value)
         {
             player.settings.volume = value;
-            lbVolume.Text = "Volume " + player.settings.volume.ToString();
+            lbVolume.Text = "Volume " + player.settings.volume;
+            currentVolume = value;
         }
 
         private void lbTitles_SelectedIndexChanged(object sender, EventArgs e)
@@ -213,6 +216,7 @@ namespace Mp3Player
 
         private void play()
         {
+            player.settings.volume = currentVolume;
             if (standardModePlayFinished)
             {
                 standardModePlayFinished = false;
@@ -427,6 +431,11 @@ namespace Mp3Player
             tbPosition.Hide();
             lbTime.Hide();
             btnDelete.Hide();
+            btnSilent.Hide();
+            btnLoud.Hide();
+            btnShuffle.Hide();
+            btnRepeatAll.Hide();
+            btnSingleRepeat.Hide();
         }
 
         private void tbPosition_Scroll(object sender, EventArgs e)
@@ -457,6 +466,31 @@ namespace Mp3Player
             }
         }
 
+        private void btnSilent_Click(object sender, EventArgs e)
+        {
+            setVolume(0);
+        }
+
+        private void btnLoud_Click(object sender, EventArgs e)
+        {
+            setVolume(100);
+        }
+
+        private void btnShuffle_Click(object sender, EventArgs e)
+        {
+            setMode(3);
+        }
+
+        private void btnSingleRepeat_Click(object sender, EventArgs e)
+        {
+            setMode(1);
+        }
+
+        private void btnRepeatAll_Click(object sender, EventArgs e)
+        {
+            setMode(2);
+        }
+
         private void uNHIDEALLToolStripMenuItem_Click(object sender, EventArgs e)
         {
             showAll();
@@ -482,6 +516,11 @@ namespace Mp3Player
             tbPosition.Show();
             lbTime.Show();
             btnDelete.Show();
+            btnSilent.Show();
+            btnLoud.Show();
+            btnShuffle.Show();
+            btnRepeatAll.Show();
+            btnSingleRepeat.Show();
         }
 
     }

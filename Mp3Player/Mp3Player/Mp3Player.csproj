@@ -144,6 +144,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="File Types Cd.ico" />
+    <None Include="img\Icons8-Ios7-Programming-Show-Property.ico" />
+    <None Include="img\Iconsmind-Outline-Add.ico" />
+    <None Include="img\Iconsmind-Outline-Save.ico" />
+    <None Include="img\Custom-Icon-Design-Mono-General-2-Copy.ico" />
+    <None Include="img\Custom-Icon-Design-Mono-General-2-Document.ico" />
+    <None Include="img\Custom-Icon-Design-Mono-General-2-Paste.ico" />
+    <None Include="img\Iconsmind-Outline-Repeat-3-2.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Replay.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Shuffle.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Audio.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Audio-off.ico" />
+    <None Include="img\Icons8-Ios7-Arrows-Down.ico" />
+    <None Include="img\Icons8-Ios7-Arrows-Up.ico" />
+    <None Include="img\Iconsmind-Outline-Remove.ico" />
+    <None Include="img\Icons8-Windows-8-Programming-Delete-Property.ico" />
+    <None Include="img\Icons8-Ios7-Files-Delete-File.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Last-track.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Stop.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Pause.ico" />
+    <None Include="img\Danieledesantis-Audio-Video-Outline-Play.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

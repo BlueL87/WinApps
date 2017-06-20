@@ -69,5 +69,205 @@ namespace Mp3Player.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Copy {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Copy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Document {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Document", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Custom_Icon_Design_Mono_General_2_Paste {
+            get {
+                object obj = ResourceManager.GetObject("Custom-Icon-Design-Mono-General-2-Paste", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Audio {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Audio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Audio_off {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Audio-off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Last_track {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Last-track", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Pause {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Pause", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Play {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Replay {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Replay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Shuffle {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Shuffle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Danieledesantis_Audio_Video_Outline_Stop {
+            get {
+                object obj = ResourceManager.GetObject("Danieledesantis-Audio-Video-Outline-Stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Arrows_Down {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Arrows-Down", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Arrows_Up {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Arrows-Up", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Files_Delete_File {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Files-Delete-File", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Ios7_Programming_Show_Property {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Ios7-Programming-Show-Property", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Icons8_Windows_8_Programming_Delete_Property {
+            get {
+                object obj = ResourceManager.GetObject("Icons8-Windows-8-Programming-Delete-Property", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Add {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Remove {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Remove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Repeat_3_2 {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Repeat-3-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Save {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Save", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
