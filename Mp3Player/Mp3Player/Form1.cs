@@ -174,6 +174,7 @@ namespace Mp3Player
                                     && x.Substring(x.Length - 5) != ".flac"
                                     && x.Substring(x.Length - 4) != ".mp4"
                                     && x.Substring(x.Length - 4) != ".avi"
+                                    && x.Substring(x.Length - 4) != ".m4a"
                                     ) continue;
                                 playlist.Add(x);
                                 lbTitles.Items.Add(x);

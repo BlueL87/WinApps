@@ -38,6 +38,7 @@
             this.aBOUTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vERSIONToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aUTHORToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dONATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStop = new System.Windows.Forms.Button();
             this.btnPlay = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
@@ -62,7 +63,6 @@
             this.btnSingleRepeat = new System.Windows.Forms.Button();
             this.btnRepeatAll = new System.Windows.Forms.Button();
             this.btnLast = new System.Windows.Forms.Button();
-            this.dONATEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbPosition)).BeginInit();
             this.SuspendLayout();
@@ -159,6 +159,15 @@
             this.aUTHORToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
             this.aUTHORToolStripMenuItem.Text = "AUTHOR";
             this.aUTHORToolStripMenuItem.Click += new System.EventHandler(this.aUTHORToolStripMenuItem_Click);
+            // 
+            // dONATEToolStripMenuItem
+            // 
+            this.dONATEToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dONATEToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.dONATEToolStripMenuItem.Name = "dONATEToolStripMenuItem";
+            this.dONATEToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
+            this.dONATEToolStripMenuItem.Text = "DONATE";
+            this.dONATEToolStripMenuItem.Click += new System.EventHandler(this.dONATEToolStripMenuItem_Click);
             // 
             // btnStop
             // 
@@ -559,15 +568,6 @@
             this.btnLast.UseVisualStyleBackColor = false;
             this.btnLast.Click += new System.EventHandler(this.btnLast_Click);
             // 
-            // dONATEToolStripMenuItem
-            // 
-            this.dONATEToolStripMenuItem.Font = new System.Drawing.Font("Lucida Handwriting", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dONATEToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.dONATEToolStripMenuItem.Name = "dONATEToolStripMenuItem";
-            this.dONATEToolStripMenuItem.Size = new System.Drawing.Size(95, 24);
-            this.dONATEToolStripMenuItem.Text = "DONATE";
-            this.dONATEToolStripMenuItem.Click += new System.EventHandler(this.dONATEToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -605,6 +605,7 @@
             this.MaximumSize = new System.Drawing.Size(1024, 768);
             this.MinimumSize = new System.Drawing.Size(1024, 768);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Blue\'s Musicplayer";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
